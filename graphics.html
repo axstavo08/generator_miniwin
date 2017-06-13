@@ -141,7 +141,7 @@
 			var newLine = '\r\n';
 			
 			$("#generar").click(function(){
-				body = 'vredimensiona('+($("#rowN").val() * $("#widthN").val())+','+($("#colN").val() * $("#heightN").val())+');'+newLine;
+				body = 'vredimensiona('+($("#colN").val() * $("#widthN").val())+','+($("#rowN").val() * $("#heightN").val())+');'+newLine;
 				body += newLine;
 				body += '/*Color blanco por defecto en cada linea, este se debe cambiar'+newLine;
 				body += 'para dar color personalizado a las formas.*/'+newLine;
@@ -151,11 +151,11 @@
 				var h = parseInt($("#heightN").val());
 				var top = 0;
 				var bottom = h;
-				for(var i=1; i<=parseInt($("#colN").val()); i++){
+				for(var i=1; i<=parseInt($("#rowN").val()); i++){
 					body += '/*'+newLine;
 					body += '* FILA '+i+newLine;
 					body += '*/'+newLine;
-					for(var j=1; j<=parseInt($("#rowN").val()); j++){
+					for(var j=1; j<=parseInt($("#colN").val()); j++){
 						body += colorGen+newLine;
 						body += 'rectangulo_lleno('+counter+','+top+','+(counter+w)+','+bottom+');'+newLine;
 						counter += w;
@@ -168,26 +168,26 @@
 				body += '/*------------------------------------------------------------------*/'+newLine;
 				body += newLine;
 				var lineW = 0;
-				for(var k=0; k<=parseInt($("#rowN").val()); k++){
+				for(var k=0; k<=parseInt($("#colN").val()); k++){
 					body += '/*'+newLine;
 					body += '* LINEA DE COLUMNA '+k+newLine;
 					body += '*/'+newLine;
 					body += colorLine+newLine;
-					body += 'linea('+(lineW-1)+','+0+','+(lineW-1)+','+parseInt($("#colN").val() * $("#heightN").val())+');'+newLine;
-					body += 'linea('+lineW+','+0+','+lineW+','+parseInt($("#colN").val() * $("#heightN").val())+');'+newLine;
-					body += 'linea('+(lineW+1)+','+0+','+(lineW+1)+','+parseInt($("#colN").val() * $("#heightN").val())+');'+newLine;
+					body += 'linea('+(lineW-1)+','+0+','+(lineW-1)+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
+					body += 'linea('+lineW+','+0+','+lineW+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
+					body += 'linea('+(lineW+1)+','+0+','+(lineW+1)+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
 					lineW += w;
 				}
 				body += newLine;
 				var lineH = 0;
-				for(var l=0; l<=parseInt($("#colN").val()); l++){
+				for(var l=0; l<=parseInt($("#rowN").val()); l++){
 					body += '/*'+newLine;
 					body += '* LINEA DE FILA '+l+newLine;
 					body += '*/'+newLine;
 					body += colorLine+newLine;
-					body += 'linea('+0+','+(lineH-1)+','+parseInt($("#rowN").val() * $("#widthN").val())+','+(lineH-1)+');'+newLine;
-					body += 'linea('+0+','+lineH+','+parseInt($("#rowN").val() * $("#widthN").val())+','+lineH+');'+newLine;
-					body += 'linea('+0+','+(lineH+1)+','+parseInt($("#rowN").val() * $("#widthN").val())+','+(lineH+1)+');'+newLine;
+					body += 'linea('+0+','+(lineH-1)+','+parseInt($("#colN").val() * $("#widthN").val())+','+(lineH-1)+');'+newLine;
+					body += 'linea('+0+','+lineH+','+parseInt($("#colN").val() * $("#widthN").val())+','+lineH+');'+newLine;
+					body += 'linea('+0+','+(lineH+1)+','+parseInt($("#colN").val() * $("#widthN").val())+','+(lineH+1)+');'+newLine;
 					lineH += h;
 				}
 				body += newLine;
