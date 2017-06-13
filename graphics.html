@@ -102,7 +102,7 @@
 				</td>
 				<td>
 					<div class="lineForm">
-						<span>Ancho de cada elemento:</span><input id="widthN" type="text" class="widthN"/>
+						<span>Alto de cada elemento:</span><input id="heightN" type="text" class="heightN"/>
 					</div>
 				</td>
 			</tr>
@@ -114,7 +114,7 @@
 				</td>
 				<td>
 					<div class="lineForm">
-						<span>Alto de cada elemento:</span><input id="heightN" type="text" class="heightN"/>
+						<span>Ancho de cada elemento:</span><input id="widthN" type="text" class="widthN"/>
 					</div>
 				</td>
 			</tr>
@@ -139,12 +139,19 @@
 			var colorGen = 'color_rgb(242, 242, 242);';
 			var colorLine = 'color_rgb(13, 13, 13);';
 			var newLine = '\r\n';
+			var tabLine = '\t';
 			
 			$("#generar").click(function(){
-				body = 'vredimensiona('+($("#colN").val() * $("#widthN").val())+','+($("#rowN").val() * $("#heightN").val())+');'+newLine;
+				body = '#include "miniwin.h"'+newLine;
 				body += newLine;
-				body += '/*Color blanco por defecto en cada linea, este se debe cambiar'+newLine;
-				body += 'para dar color personalizado a las formas.*/'+newLine;
+				body += 'using namespace miniwin;'+newLine;
+				body += newLine;
+				body += 'int main() {'+newLine;
+				body += newLine;
+				body += tabLine+'vredimensiona('+($("#colN").val() * $("#widthN").val())+','+($("#rowN").val() * $("#heightN").val())+');'+newLine;
+				body += newLine;
+				body += tabLine+'/*Color blanco por defecto en cada linea, este se debe cambiar'+newLine;
+				body += tabLine+'para dar color personalizado a las formas.*/'+newLine;
 				body += newLine;
 				var counter = 0;
 				var w = parseInt($("#widthN").val());
@@ -152,12 +159,12 @@
 				var top = 0;
 				var bottom = h;
 				for(var i=1; i<=parseInt($("#rowN").val()); i++){
-					body += '/*'+newLine;
-					body += '* FILA '+i+newLine;
-					body += '*/'+newLine;
+					body += tabLine+'/*'+newLine;
+					body += tabLine+'* FILA '+i+newLine;
+					body += tabLine+'*/'+newLine;
 					for(var j=1; j<=parseInt($("#colN").val()); j++){
-						body += colorGen+newLine;
-						body += 'rectangulo_lleno('+counter+','+top+','+(counter+w)+','+bottom+');'+newLine;
+						body += tabLine+colorGen+newLine;
+						body += tabLine+'rectangulo_lleno('+counter+','+top+','+(counter+w)+','+bottom+');'+newLine;
 						counter += w;
 					}
 					body += newLine;
@@ -165,34 +172,37 @@
 					bottom += h;
 					counter = 0;
 				}
-				body += '/*------------------------------------------------------------------*/'+newLine;
+				body += tabLine+'/*------------------------------------------------------------------*/'+newLine;
 				body += newLine;
 				var lineW = 0;
 				for(var k=0; k<=parseInt($("#colN").val()); k++){
-					body += '/*'+newLine;
-					body += '* LINEA DE COLUMNA '+k+newLine;
-					body += '*/'+newLine;
-					body += colorLine+newLine;
-					body += 'linea('+(lineW-1)+','+0+','+(lineW-1)+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
-					body += 'linea('+lineW+','+0+','+lineW+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
-					body += 'linea('+(lineW+1)+','+0+','+(lineW+1)+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
+					body += tabLine+'/*'+newLine;
+					body += tabLine+'* LINEA DE COLUMNA '+k+newLine;
+					body += tabLine+'*/'+newLine;
+					body += tabLine+colorLine+newLine;
+					body += tabLine+'linea('+(lineW-1)+','+0+','+(lineW-1)+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
+					body += tabLine+'linea('+lineW+','+0+','+lineW+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
+					body += tabLine+'linea('+(lineW+1)+','+0+','+(lineW+1)+','+parseInt($("#rowN").val() * $("#heightN").val())+');'+newLine;
+					body += newLine;
 					lineW += w;
 				}
 				body += newLine;
 				var lineH = 0;
 				for(var l=0; l<=parseInt($("#rowN").val()); l++){
-					body += '/*'+newLine;
-					body += '* LINEA DE FILA '+l+newLine;
-					body += '*/'+newLine;
-					body += colorLine+newLine;
-					body += 'linea('+0+','+(lineH-1)+','+parseInt($("#colN").val() * $("#widthN").val())+','+(lineH-1)+');'+newLine;
-					body += 'linea('+0+','+lineH+','+parseInt($("#colN").val() * $("#widthN").val())+','+lineH+');'+newLine;
-					body += 'linea('+0+','+(lineH+1)+','+parseInt($("#colN").val() * $("#widthN").val())+','+(lineH+1)+');'+newLine;
+					body += tabLine+'/*'+newLine;
+					body += tabLine+'* LINEA DE FILA '+l+newLine;
+					body += tabLine+'*/'+newLine;
+					body += tabLine+colorLine+newLine;
+					body += tabLine+'linea('+0+','+(lineH-1)+','+parseInt($("#colN").val() * $("#widthN").val())+','+(lineH-1)+');'+newLine;
+					body += tabLine+'linea('+0+','+lineH+','+parseInt($("#colN").val() * $("#widthN").val())+','+lineH+');'+newLine;
+					body += tabLine+'linea('+0+','+(lineH+1)+','+parseInt($("#colN").val() * $("#widthN").val())+','+(lineH+1)+');'+newLine;
+					body += newLine;
 					lineH += h;
 				}
+				body += tabLine+'refresca();'+newLine;
+				body += tabLine+'return 0;'+newLine;
 				body += newLine;
-				body += 'refresca();'+newLine;
-				body += 'return 0;'+newLine;
+				body += '}';
 				saveTextAsFile();
 			});
 			
