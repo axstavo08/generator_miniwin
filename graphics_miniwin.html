@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Generator_Code_Miniwin">
+    <meta name="author" content="Gustavo_Ramos_Montalvo">
+    <title>Generador de C&oacute;digo Miniwin</title>
+    <link href="js/libraries/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/background_animated.css" rel="stylesheet">  
+    <link href="css/main.css" rel="stylesheet">  
+  </head>
+  <body>
+	<!--Background Animated-->
+	<div id="background_miniwin"></div>
+	<div id="background_miniwin"></div>
+	<div id="background_miniwin"></div>
+	<div id="background_miniwin"></div>
+	<!--NavBar-->
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#" style="color: #f2f2f2;">Generator Miniwin</a>
+			</div>
+			<div id="navbar" class="collapse navbar-collapse nav-text-center">
+				<div class="nav-wrap">
+					<ul class="nav navbar-nav">
+						<li id="navminiwin_init" class="active nav-hover"><a href="#">Inicio</a></li>
+						<li id="navminiwin_manual" class="nav-hover"><a href="#">Instrucciones</a></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+	</nav>
+	<!--Content-->
+    <div class="container">
+		<div id="board" class="board">
+			<div class="row">
+				<h1>Complete campos antes de generar</h1>
+			</div>
+			<div class="row margin-top-3perc">
+				<div class="col-sm-5 col-md-5 col-lg-5 margin-bottom-4perc">
+					<div class="row">
+						<div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
+							<span class="form-text pull-right margin-top-3perc">Filas</span>
+						</div>
+						<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">	
+							<input id="rowN" type="text" class="input-main rowN pull-left"/>
+							<div class="margin-top-5perc">
+								<a id="info_rows" class="info miniwin-tooltip" href="#" data-toggle="tooltip" data-placement="auto right" title="Cantidad de filas">
+									<span class="glyphicon glyphicon-info-sign"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-8perc">
+						<div class="col-xs-4 col-sm-6 col-md-6 col-lg-6">
+							<span class="form-text pull-right">Columnas</span>
+						</div>
+						<div class="col-xs-8 col-sm-6 col-md-6 col-lg-6">
+							<input id="colN" type="text" class="input-main colN pull-left"/>
+							<div class="margin-5perc-all">
+								<a id="info_cols" class="info miniwin-tooltip" href="#" data-toggle="tooltip" data-placement="auto right" title="Cantidad de columnas">
+									<span class="glyphicon glyphicon-info-sign"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-sm-2 col-md-2 col-lg-2">
+					<div class="divider"></div>
+				</div>
+				<div class="col-sm-5 col-md-5 col-lg-5 margin-bottom-4perc">
+					<div class="row">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<span class="form-text pull-right margin-top-3perc">Alto</span>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+							<input id="heightN" type="text" class="input-main heightN pull-left"/>
+							<div class="margin-top-5perc">
+								<a id="info_height" class="info miniwin-tooltip" href="#" data-toggle="tooltip" data-placement="auto right" title="Alto de cada elemento">
+									<span class="glyphicon glyphicon-info-sign"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="row margin-top-8perc">
+						<div class="col-xs-4 col-sm-4 col-md-4 col-lg-4">
+							<span class="form-text pull-right margin-top-3perc">Ancho</span>
+						</div>
+						<div class="col-xs-8 col-sm-8 col-md-8 col-lg-8">
+							<input id="widthN" type="text" class="input-main widthN pull-left"/>
+							<div class="margin-top-5perc">
+								<a id="info_width" class="info miniwin-tooltip" href="#" data-toggle="tooltip" data-placement="auto right" title="Ancho de cada elemento">
+									<span class="glyphicon glyphicon-info-sign"></span>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row margin-top-1perc margin-bottom-4perc content-text-center">
+				<button id="generate" class="btn btn-success button"><span class="text-bold">Generar</span></button>
+			</div>
+		</div>
+    </div>
+	<!--Footer-->
+    <footer>
+        <p class="text-muted text-footer">Copyright &copy; Gustavo Andr&eacute;s Ramos Montalvo</p>
+    </footer>
+	<!--Scripts-->
+    <script src="js/libraries/require/require.js"></script>
+    <script src="js/configuration/config_require.js"></script>
+  </body>
+</html>
+
+<script type="text/javascript">
+
+  require(['generator_miniwin'], function(application) {
+     application.init();               
+  });
+
+</script>

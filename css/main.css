@@ -1,0 +1,438 @@
+/*===========================================================================
+Project: Generator Miniwin
+Author: Gustavo Andrés Ramos Montalvo
+Version: 2.0
+============================================================================*/
+
+/*===========================================================================
+====================================Body=====================================
+===========================================================================*/
+
+body {
+  padding-top: 50px;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 16px;
+  color: #0d0d0d;
+  overflow-x: hidden;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+body > .container {
+  padding: 40px 15px 0;
+}
+
+/* ==========================================================================
+===============================Navigation Style==============================
+========================================================================== */
+
+.navbar-default .container,
+.navbar-default .navbar-collapse,
+.nav-wrap,
+.nav-wrap > ul,
+.nav-wrap > li,
+.nav-wrap .active {
+	height: 100% !important;
+}
+
+.nav-text-center {
+	text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+	.navbar-default .navbar-header {
+		width: 40%;
+		padding-right: 15px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.navbar-default {
+		background: rgba(0, 77, 38, 0.4);
+		margin-bottom: 0;
+		border: none;
+		height: 8%;
+	}
+}
+
+@media screen and (max-width: 1280px) and (min-width: 768px) {
+	.navbar-default {
+		background: rgba(0, 77, 38, 0.4);
+		margin-bottom: 0;
+		border: none;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.navbar-default .navbar-header {
+		padding-right: 15px;
+	}
+	
+	.navbar-default {
+		background: rgba(0, 77, 38, 0.4);
+		margin-bottom: 0;
+		border: none;
+		height: 8%;
+	}
+}
+
+.navbar-default .nav > li > a {
+	font-size: 14px;
+	color: #fff;
+	font-weight: 700;
+	text-transform: uppercase;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+}
+
+.navbar-default .nav > li > a:hover,
+.navbar-default .nav > li > a:focus,
+.navbar-default .nav > li > a:active {
+	background: transparent;
+	color: #00994d;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:focus,
+.navbar-default .navbar-nav > .active > a:hover {
+	background: transparent;
+	color: #00994d;
+}
+
+.nav-wrap .navbar-nav .active {
+	background: transparent;
+	border-style: dotted;
+	border-color: rgba(0, 153, 77, 0.5);
+	color: #00994d;
+}
+
+/*===========================================================================
+====================================Falta===================================
+===========================================================================*/
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+code {
+  font-size: 80%;
+}
+
+/*===========================================================================
+====================================Typography===============================
+===========================================================================*/
+
+h1 {
+	font-family: 'Trebuchet MS', Helvetica, sans-serif;
+	font-size: 20px;
+	color: #00331a;
+	font-weight: bold;
+	letter-spacing: 0.005em;
+	text-transform: uppercase;
+	text-align: center;
+}
+
+h2 {
+	font-size: 36px;
+	color: #000;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+}
+
+h3 {
+	font-size: 26px;
+	color: #000;
+	font-weight: 400;
+}
+
+h4 {
+	font-size: 24px;
+	color: #000;
+	font-weight: 400;
+}
+
+h5 {
+	font-size: 22px;
+	color: #000;
+	font-weight: 400;
+}
+
+h6 {
+	font-size: 18px;
+	color: #000;
+	font-weight: 400;
+	letter-spacing: 0.05em;
+}
+
+p {
+	font-size: 16px;
+	color: #000;
+	font-weight: 400;
+}
+
+.text-bold {
+	font-weight: bold;
+}
+
+/*===========================================================================
+====================================Content==================================
+===========================================================================*/
+
+@media screen and (min-width: 991px) {
+	.board {
+		background-color: #f2f2f2; 
+		width: 60%;
+		padding: 0.1% 5%;
+		margin: 0 auto;
+		border-style: solid;
+		border-width: 3px;  
+		border-color: #808080;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (max-width: 991px) and (min-width: 400px) {
+	.board {
+		background-color: #f2f2f2; 
+		width: 80%;
+		padding: 0.1% 5%;
+		margin: 0 auto;
+		border-style: solid;
+		border-width: 3px;  
+		border-color: #808080;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (max-width: 400px) {
+	.board {
+		background-color: #f2f2f2; 
+		width: 90%;
+		padding: 0.1% 5%;
+		margin: 0 auto;
+		border-style: solid;
+		border-width: 3px;  
+		border-color: #808080;
+		border-radius: 10px;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	h1 {
+		font-family: 'Trebuchet MS', Helvetica, sans-serif;
+		font-size: 16px;
+		color: #00331a;
+		font-weight: bold;
+		letter-spacing: 0.005em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	.divider{
+		margin: 0 4%;
+		border-top: 1px solid rgba(0, 51, 26, 0.5);
+		width: 92%;
+		margin-bottom: 5%;
+	}
+	
+	.rowN {
+		width: 60%;
+	}
+
+	.colN {
+		width: 60%;
+	}
+
+	.widthN {
+		width: 60%;
+	}
+
+	.heightN {
+		width: 60%;
+	}
+}
+
+@media screen and (min-width: 768px) {
+	h1 {
+		font-family: 'Trebuchet MS', Helvetica, sans-serif;
+		font-size: 20px;
+		color: #00331a;
+		font-weight: bold;
+		letter-spacing: 0.005em;
+		text-transform: uppercase;
+		text-align: center;
+	}
+	
+	.divider{
+		height: 78px;
+		margin: 0 45%;
+		border-right: 1px solid rgba(0, 51, 26, 0.5);
+		border-top: none;
+	}
+	
+	.rowN {
+		width: 60%;
+	}
+
+	.colN {
+		width: 60%;
+	}
+
+	.widthN {
+		width: 42%;
+	}
+
+	.heightN {
+		width: 42%;
+	}
+}
+
+
+
+.margin-top-1perc {
+	margin-top: 1%;
+}
+
+.margin-top-2perc {
+	margin-top: 2%;
+}
+
+.margin-top-3perc {
+	margin-top: 3%;
+}
+
+.margin-top-5perc {
+	margin-top: 5%;
+}
+
+.margin-top-8perc {
+	margin-top: 8%;
+}
+
+.margin-bottom-4perc {
+	margin-bottom: 4%;
+}
+
+.margin-left-4perc {
+	margin-left: 4%;
+}
+
+.content-middle {
+	margin: 0 auto;
+}
+
+.content-text-center {
+	text-align: center;
+}
+
+.margin-5perc-all {
+	margin: 5% 0 0 5%;
+}
+
+.info {
+	color: #00994f;
+}
+
+.info:focus, .info:hover {
+	color: #006635;
+}
+
+.input-main {
+	padding: 3px 9px;
+	font-size: 1em;
+	line-height: 1.42857143;
+	color: #333333;
+	background-color: #f2f2f2;
+	border: 1px solid #006633;
+	border-radius: 4px;
+	-webkit-box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
+	-webkit-transition: border-color ease-in-out .15s,-webkit-box-shadow ease-in-out .15s;
+	-o-transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+	transition: border-color ease-in-out .15s,box-shadow ease-in-out .15s;
+}
+
+.input-main:focus {
+	border: 1px solid #006633;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0, 179, 89,.7);
+}
+
+.button {
+	background-color: #004d26;
+	border-color: #00b359;
+}
+
+.button:hover {
+	background-color: #001a0d;
+	border-color: #006633;
+}
+
+.button:active {
+	border-color: #006633;
+	box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(0, 179, 89,.7);
+}
+
+.miniwin-tooltip + .tooltip > .tooltip-inner {
+	background-color: #006633;
+}
+
+.miniwin-tooltip + .tooltip > .tooltip-arrow {
+	border-right-color: #006633;
+}
+	
+/*===========================================================================
+====================================Footer===================================
+===========================================================================*/
+
+@media screen and (max-width: 525px) {
+	footer {
+		position: absolute;
+		width: 100%;
+		clear: both;
+		bottom: 0;
+		padding: 0;
+		margin: 0;
+		height: 40px;
+		background-color: rgba(0, 51, 26, 0.75);
+	}
+
+	.text-footer {
+		text-align: center !important;
+		color: #f2f2f2;
+		font-size: 0.8em;
+		margin-top: 2%;
+	}
+	
+	.form-text {
+		font-size: 0.8em;
+	}
+}
+
+@media screen and (min-width: 525px) {
+	footer {
+		position: absolute;
+		width: 100%;
+		clear: both;
+		bottom: 0;
+		padding: 0;
+		margin: 0;
+		height: 40px;
+		background-color: rgba(0, 51, 26, 0.75);
+	}
+
+	.text-footer {
+		text-align: center !important;
+		color: #f2f2f2;
+		font-size: 0.975em;
+		margin-top: 1%;
+	}
+	
+	.form-text {
+		font-size: 1em;
+	}
+}
