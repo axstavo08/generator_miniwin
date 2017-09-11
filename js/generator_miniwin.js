@@ -1,3 +1,8 @@
+/*===========================================================================
+Project: Generator Miniwin
+Author: Gustavo Andrés Ramos Montalvo
+============================================================================*/
+
 define([
     'jquery', 'bootstrap'
 ], function($) {
@@ -7,22 +12,35 @@ define([
 
     function buildUI() {
 		$("#navminiwin_init").on('click', function(){
-			console.log("prueba");
 			$("#navminiwin_manual").removeClass("active");
 			$("#navminiwin_init").addClass("active");
-			//$("#conthandsontable").addClass("hidden");
-			//$("#contkendoui").removeClass("hidden");
-		});
-
-		$("#navminiwin_manual").on('click', function(){
-			console.log("prueba");
-			$("#navminiwin_init").removeClass("active");
-			$("#navminiwin_manual").addClass("active");
-			//$("#contkendoui").addClass("hidden");
-			//$("#conthandsontable").removeClass("hidden");
+			$("#contminiwin_manual").addClass("hidden");
+			$("#contminiwin_init").removeClass("hidden");
 		});
 		
+		$("#navminiwin_manual").on('click', function(){
+			$("#navminiwin_init").removeClass("active");
+			$("#navminiwin_manual").addClass("active");
+			$("#contminiwin_init").addClass("hidden");
+			$("#contminiwin_manual").removeClass("hidden");
+		});
+		
+		$('#info_rows').tooltip(); 
+		$('#info_cols').tooltip(); 
+		$('#info_height').tooltip(); 
+		$('#info_width').tooltip(); 
+		
 		$("#generate").on('click', function(){
+			generate();
+		});
+    }
+	
+	function generate() {
+		var vrowN = $("#rowN").val(), vcolN = $("#colN").val(), vheightN = $("#heightN").val(), vwidthN = $("#widthN").val(),
+			values = [vrowN,vcolN,vheightN,vwidthN], isOk;
+		isOk = validateFields(values);
+		if(isOk) {
+			$("#msgerror").addClass("hidden");
 			body = '#include "miniwin.h"'+newLine;
 			body += newLine;
 			body += 'using namespace miniwin;'+newLine;
@@ -85,33 +103,38 @@ define([
 			body += newLine;
 			body += '}';
 			saveTextAsFile();
-		});
-		
-		$('#info_rows').tooltip(); 
-		$('#info_cols').tooltip(); 
-		$('#info_height').tooltip(); 
-		$('#info_width').tooltip(); 
-    }
+		} else {
+			$("#msgerror").removeClass("hidden");
+		}
+	}
 	
 	function saveTextAsFile(){
-		var textToSave = body;
-		var textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"});
-		var textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob);
-		var fileNameToSaveAs = 'graphics_code_miniwin';
-	 
-		var downloadLink = document.createElement("a");
+		var textToSave = body, textToSaveAsBlob = new Blob([textToSave], {type:"text/plain"}),
+		    textToSaveAsURL = window.URL.createObjectURL(textToSaveAsBlob), fileNameToSaveAs = 'graphics_code_miniwin',
+			downloadLink = document.createElement("a");
 		downloadLink.download = fileNameToSaveAs;
 		downloadLink.innerHTML = "Download File";
 		downloadLink.href = textToSaveAsURL;
 		downloadLink.onclick = destroyClickedElement;
 		downloadLink.style.display = "none";
 		document.body.appendChild(downloadLink);
-	 
 		downloadLink.click();
 	}
 	 
 	function destroyClickedElement(event){
 		document.body.removeChild(event.target);
+	}
+	
+	function validateFields(values) {
+		var regex = /^[0-9\b.,]+$/, isOk, i, value, valFields = {'error': 0};
+		for(i in values) {
+			value = values[i];
+			if(!regex.test(value)){
+				valFields["error"] = valFields["error"]+1;
+			} 
+		}
+		isOk = (valFields["error"] == 0) ? true : false;
+		return isOk;
 	}
 	
     function init() {

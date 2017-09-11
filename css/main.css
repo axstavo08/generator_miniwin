@@ -1,7 +1,6 @@
 /*===========================================================================
 Project: Generator Miniwin
 Author: Gustavo Andrés Ramos Montalvo
-Version: 2.0
 ============================================================================*/
 
 /*===========================================================================
@@ -46,6 +45,17 @@ body > .container {
 		width: 40%;
 		padding-right: 15px;
 	}
+	
+	.icon-github {
+		font-size: 200%;
+		float: right;
+		height: inherit;
+		color: #0d0d0d;
+	}
+	
+	.nav-divider {
+		display: none !important;
+	}
 }
 
 @media screen and (min-width: 1280px) {
@@ -70,11 +80,39 @@ body > .container {
 		padding-right: 15px;
 	}
 	
-	.navbar-default {
-		background: rgba(0, 77, 38, 0.4);
-		margin-bottom: 0;
-		border: none;
-		height: 8%;
+	.navbar-default-custom {
+		border-color: rgba(0, 51, 26, 0.75) !important;
+	}
+	
+	.navbar-custom-head {
+		background: rgba(0, 77, 38, 0.75);
+	}
+	
+	.navbar-custom {
+		background: rgba(0, 77, 38, 0.75);
+		border-color: #00331a !important;
+	}
+	
+	.navbar-toggle-custom:hover,
+	.navbar-toggle-custom:focus	{
+		background-color: rgba(0, 128, 64, 0.75) !important;
+	}
+	
+	.icon-github {
+		font-size: 200%;
+		height: inherit;
+		color: #0d0d0d;
+	}
+	
+	.nav-divider {
+		display: block !important;
+		border-top: 1px solid rgba(0, 51, 26, 0.5);
+		width: 100%;
+		margin-bottom: 2%;
+	}
+	
+	.nav-icon-divider {
+		margin-bottom: 3%;
 	}
 }
 
@@ -93,21 +131,21 @@ body > .container {
 .navbar-default .nav > li > a:focus,
 .navbar-default .nav > li > a:active {
 	background: transparent;
-	color: #00994d;
+	color: #00e673;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
 	background: transparent;
-	color: #00994d;
+	color: #00e673;
 }
 
 .nav-wrap .navbar-nav .active {
 	background: transparent;
 	border-style: dotted;
-	border-color: rgba(0, 153, 77, 0.5);
-	color: #00994d;
+	border-color: rgba(0, 230, 115, 0.5);
+	color: #00e673;
 }
 
 /*===========================================================================
@@ -179,6 +217,22 @@ p {
 	font-weight: bold;
 }
 
+.text-error {
+	font-size: 14px;
+}
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.icon-github a {
+	color: #e6e6e6;
+}
+
+.icon-github a:hover {
+	color: #ffffff;
+}
+
 /*===========================================================================
 ====================================Content==================================
 ===========================================================================*/
@@ -194,6 +248,12 @@ p {
 		border-color: #808080;
 		border-radius: 10px;
 	}
+	
+	.msgerror {
+		width: 60%;
+		margin: 0 auto;
+		padding: 5px 15px;
+	}
 }
 
 @media screen and (max-width: 991px) and (min-width: 400px) {
@@ -207,6 +267,12 @@ p {
 		border-color: #808080;
 		border-radius: 10px;
 	}
+	
+	.msgerror {
+		width: 80%;
+		margin: 0 auto;
+		padding: 5px 15px;
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -219,6 +285,12 @@ p {
 		border-width: 3px;  
 		border-color: #808080;
 		border-radius: 10px;
+	}
+	
+	.msgerror {
+		width: 90%;
+		margin: 0 auto;
+		padding: 5px 15px;
 	}
 }
 
@@ -292,8 +364,6 @@ p {
 	}
 }
 
-
-
 .margin-top-1perc {
 	margin-top: 1%;
 }
@@ -316,6 +386,14 @@ p {
 
 .margin-bottom-4perc {
 	margin-bottom: 4%;
+}
+
+.margin-bottom-1percImp {
+	margin-bottom: 1%;
+}
+
+.margin-bottom-1percImp {
+	margin-bottom: 1% !important;
 }
 
 .margin-left-4perc {
@@ -384,12 +462,12 @@ p {
 .miniwin-tooltip + .tooltip > .tooltip-arrow {
 	border-right-color: #006633;
 }
-	
+
 /*===========================================================================
 ====================================Footer===================================
 ===========================================================================*/
 
-@media screen and (max-width: 525px) {
+@media screen and (min-width: 768px) {
 	footer {
 		position: absolute;
 		width: 100%;
@@ -397,8 +475,31 @@ p {
 		bottom: 0;
 		padding: 0;
 		margin: 0;
-		height: 40px;
 		background-color: rgba(0, 51, 26, 0.75);
+	}
+	
+	.text-footer {
+		text-align: center !important;
+		color: #f2f2f2;
+		font-size: 0.975em;
+		margin-top: 1%;
+	}
+	
+	.form-text {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 525px) {
+	footer {
+		position: absolute;
+		width: 100%;
+		clear: both;
+		padding: 0;
+		margin: 0;
+		bottom: 0;
+		background-color: rgba(0, 51, 26, 0.75);
+		
 	}
 
 	.text-footer {
@@ -413,15 +514,14 @@ p {
 	}
 }
 
-@media screen and (min-width: 525px) {
+@media screen and (min-width: 525px) and (max-width: 767px) {
 	footer {
 		position: absolute;
 		width: 100%;
 		clear: both;
-		bottom: 0;
 		padding: 0;
 		margin: 0;
-		height: 40px;
+		bottom: 0;
 		background-color: rgba(0, 51, 26, 0.75);
 	}
 
