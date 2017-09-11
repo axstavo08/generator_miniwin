@@ -1,3 +1,8 @@
+/*===========================================================================
+Project: Generator Miniwin
+Author: Gustavo Andrés Ramos Montalvo
+============================================================================*/
+
 requirejs.config({
     baseUrl: 'js/',
     paths: {
