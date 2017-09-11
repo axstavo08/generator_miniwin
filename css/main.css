@@ -1,7 +1,6 @@
 /*===========================================================================
 Project: Generator Miniwin
 Author: Gustavo Andrés Ramos Montalvo
-Version: 2.0
 ============================================================================*/
 
 /*===========================================================================
@@ -46,6 +45,17 @@ body > .container {
 		width: 40%;
 		padding-right: 15px;
 	}
+	
+	.icon-github {
+		font-size: 200%;
+		float: right;
+		height: inherit;
+		color: #0d0d0d;
+	}
+	
+	.nav-divider {
+		display: none !important;
+	}
 }
 
 @media screen and (min-width: 1280px) {
@@ -86,6 +96,23 @@ body > .container {
 	.navbar-toggle-custom:hover,
 	.navbar-toggle-custom:focus	{
 		background-color: rgba(0, 128, 64, 0.75) !important;
+	}
+	
+	.icon-github {
+		font-size: 200%;
+		height: inherit;
+		color: #0d0d0d;
+	}
+	
+	.nav-divider {
+		display: block !important;
+		border-top: 1px solid rgba(0, 51, 26, 0.5);
+		width: 100%;
+		margin-bottom: 2%;
+	}
+	
+	.nav-icon-divider {
+		margin-bottom: 3%;
 	}
 }
 
@@ -192,6 +219,18 @@ p {
 
 .text-error {
 	font-size: 14px;
+}
+
+.align-middle {
+	vertical-align: middle;
+}
+
+.icon-github a {
+	color: #e6e6e6;
+}
+
+.icon-github a:hover {
+	color: #ffffff;
 }
 
 /*===========================================================================
@@ -325,8 +364,6 @@ p {
 	}
 }
 
-
-
 .margin-top-1perc {
 	margin-top: 1%;
 }
@@ -430,7 +467,7 @@ p {
 ====================================Footer===================================
 ===========================================================================*/
 
-@media screen and (max-width: 525px) {
+@media screen and (min-width: 768px) {
 	footer {
 		position: absolute;
 		width: 100%;
@@ -438,8 +475,31 @@ p {
 		bottom: 0;
 		padding: 0;
 		margin: 0;
-		height: 40px;
 		background-color: rgba(0, 51, 26, 0.75);
+	}
+	
+	.text-footer {
+		text-align: center !important;
+		color: #f2f2f2;
+		font-size: 0.975em;
+		margin-top: 1%;
+	}
+	
+	.form-text {
+		font-size: 1em;
+	}
+}
+
+@media screen and (max-width: 525px) {
+	footer {
+		position: absolute;
+		width: 100%;
+		clear: both;
+		padding: 0;
+		margin: 0;
+		bottom: 0;
+		background-color: rgba(0, 51, 26, 0.75);
+		
 	}
 
 	.text-footer {
@@ -454,15 +514,14 @@ p {
 	}
 }
 
-@media screen and (min-width: 525px) {
+@media screen and (min-width: 525px) and (max-width: 767px) {
 	footer {
 		position: absolute;
 		width: 100%;
 		clear: both;
-		bottom: 0;
 		padding: 0;
 		margin: 0;
-		height: 40px;
+		bottom: 0;
 		background-color: rgba(0, 51, 26, 0.75);
 	}
 
