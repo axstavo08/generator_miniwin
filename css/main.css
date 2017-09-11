@@ -70,11 +70,22 @@ body > .container {
 		padding-right: 15px;
 	}
 	
-	.navbar-default {
-		background: rgba(0, 77, 38, 0.4);
-		margin-bottom: 0;
-		border: none;
-		height: 8%;
+	.navbar-default-custom {
+		border-color: rgba(0, 51, 26, 0.75) !important;
+	}
+	
+	.navbar-custom-head {
+		background: rgba(0, 77, 38, 0.75);
+	}
+	
+	.navbar-custom {
+		background: rgba(0, 77, 38, 0.75);
+		border-color: #00331a !important;
+	}
+	
+	.navbar-toggle-custom:hover,
+	.navbar-toggle-custom:focus	{
+		background-color: rgba(0, 128, 64, 0.75) !important;
 	}
 }
 
@@ -93,21 +104,21 @@ body > .container {
 .navbar-default .nav > li > a:focus,
 .navbar-default .nav > li > a:active {
 	background: transparent;
-	color: #00994d;
+	color: #00e673;
 }
 
 .navbar-default .navbar-nav > .active > a,
 .navbar-default .navbar-nav > .active > a:focus,
 .navbar-default .navbar-nav > .active > a:hover {
 	background: transparent;
-	color: #00994d;
+	color: #00e673;
 }
 
 .nav-wrap .navbar-nav .active {
 	background: transparent;
 	border-style: dotted;
-	border-color: rgba(0, 153, 77, 0.5);
-	color: #00994d;
+	border-color: rgba(0, 230, 115, 0.5);
+	color: #00e673;
 }
 
 /*===========================================================================
@@ -179,6 +190,10 @@ p {
 	font-weight: bold;
 }
 
+.text-error {
+	font-size: 14px;
+}
+
 /*===========================================================================
 ====================================Content==================================
 ===========================================================================*/
@@ -194,6 +209,12 @@ p {
 		border-color: #808080;
 		border-radius: 10px;
 	}
+	
+	.msgerror {
+		width: 60%;
+		margin: 0 auto;
+		padding: 5px 15px;
+	}
 }
 
 @media screen and (max-width: 991px) and (min-width: 400px) {
@@ -207,6 +228,12 @@ p {
 		border-color: #808080;
 		border-radius: 10px;
 	}
+	
+	.msgerror {
+		width: 80%;
+		margin: 0 auto;
+		padding: 5px 15px;
+	}
 }
 
 @media screen and (max-width: 400px) {
@@ -219,6 +246,12 @@ p {
 		border-width: 3px;  
 		border-color: #808080;
 		border-radius: 10px;
+	}
+	
+	.msgerror {
+		width: 90%;
+		margin: 0 auto;
+		padding: 5px 15px;
 	}
 }
 
@@ -318,6 +351,14 @@ p {
 	margin-bottom: 4%;
 }
 
+.margin-bottom-1percImp {
+	margin-bottom: 1%;
+}
+
+.margin-bottom-1percImp {
+	margin-bottom: 1% !important;
+}
+
 .margin-left-4perc {
 	margin-left: 4%;
 }
@@ -384,7 +425,7 @@ p {
 .miniwin-tooltip + .tooltip > .tooltip-arrow {
 	border-right-color: #006633;
 }
-	
+
 /*===========================================================================
 ====================================Footer===================================
 ===========================================================================*/
