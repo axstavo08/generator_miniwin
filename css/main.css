@@ -24,7 +24,7 @@ body > .container {
 }
 
 /* ==========================================================================
-===============================Navigation Style==============================
+===============================Navigationboa Style==============================
 ========================================================================== */
 
 .navbar-default .container,
@@ -45,14 +45,14 @@ body > .container {
 		width: 40%;
 		padding-right: 15px;
 	}
-	
+
 	.icon-github {
 		font-size: 200%;
 		float: right;
 		height: inherit;
 		color: #0d0d0d;
 	}
-	
+
 	.nav-divider {
 		display: none !important;
 	}
@@ -79,38 +79,38 @@ body > .container {
 	.navbar-default .navbar-header {
 		padding-right: 15px;
 	}
-	
+
 	.navbar-default-custom {
 		border-color: rgba(0, 51, 26, 0.75) !important;
 	}
-	
+
 	.navbar-custom-head {
 		background: rgba(0, 77, 38, 0.75);
 	}
-	
+
 	.navbar-custom {
 		background: rgba(0, 77, 38, 0.75);
 		border-color: #00331a !important;
 	}
-	
+
 	.navbar-toggle-custom:hover,
 	.navbar-toggle-custom:focus	{
 		background-color: rgba(0, 128, 64, 0.75) !important;
 	}
-	
+
 	.icon-github {
 		font-size: 200%;
 		height: inherit;
 		color: #0d0d0d;
 	}
-	
+
 	.nav-divider {
 		display: block !important;
 		border-top: 1px solid rgba(0, 51, 26, 0.5);
 		width: 100%;
 		margin-bottom: 2%;
 	}
-	
+
 	.nav-icon-divider {
 		margin-bottom: 3%;
 	}
@@ -239,35 +239,46 @@ p {
 
 @media screen and (min-width: 991px) {
 	.board {
-		background-color: #f2f2f2; 
+		background-color: #f2f2f2;
 		width: 60%;
 		padding: 0.1% 5%;
 		margin: 0 auto;
 		border-style: solid;
-		border-width: 3px;  
+		border-width: 3px;
 		border-color: #808080;
 		border-radius: 10px;
 	}
-	
+
 	.msgerror {
 		width: 60%;
 		margin: 0 auto;
 		padding: 5px 15px;
 	}
+
+	.panel-preview {
+		background-color: #f2f2f2;
+		width: 60%;
+		padding: 0.1% 5%;
+		margin: 0 auto;
+		border-style: solid;
+		border-width: 3px;
+		border-color: #808080;
+		border-radius: 10px;
+	}
 }
 
 @media screen and (max-width: 991px) and (min-width: 400px) {
 	.board {
-		background-color: #f2f2f2; 
+		background-color: #f2f2f2;
 		width: 80%;
 		padding: 0.1% 5%;
 		margin: 0 auto;
 		border-style: solid;
-		border-width: 3px;  
+		border-width: 3px;
 		border-color: #808080;
 		border-radius: 10px;
 	}
-	
+
 	.msgerror {
 		width: 80%;
 		margin: 0 auto;
@@ -277,16 +288,16 @@ p {
 
 @media screen and (max-width: 400px) {
 	.board {
-		background-color: #f2f2f2; 
+		background-color: #f2f2f2;
 		width: 90%;
 		padding: 0.1% 5%;
 		margin: 0 auto;
 		border-style: solid;
-		border-width: 3px;  
+		border-width: 3px;
 		border-color: #808080;
 		border-radius: 10px;
 	}
-	
+
 	.msgerror {
 		width: 90%;
 		margin: 0 auto;
@@ -304,14 +315,14 @@ p {
 		text-transform: uppercase;
 		text-align: center;
 	}
-	
+
 	.divider{
 		margin: 0 4%;
 		border-top: 1px solid rgba(0, 51, 26, 0.5);
 		width: 92%;
 		margin-bottom: 5%;
 	}
-	
+
 	.rowN {
 		width: 60%;
 	}
@@ -339,14 +350,14 @@ p {
 		text-transform: uppercase;
 		text-align: center;
 	}
-	
+
 	.divider{
 		height: 78px;
 		margin: 0 45%;
 		border-right: 1px solid rgba(0, 51, 26, 0.5);
 		border-top: none;
 	}
-	
+
 	.rowN {
 		width: 60%;
 	}
@@ -477,14 +488,14 @@ p {
 		margin: 0;
 		background-color: rgba(0, 51, 26, 0.75);
 	}
-	
+
 	.text-footer {
 		text-align: center !important;
 		color: #f2f2f2;
 		font-size: 0.975em;
 		margin-top: 1%;
 	}
-	
+
 	.form-text {
 		font-size: 1em;
 	}
@@ -499,7 +510,7 @@ p {
 		margin: 0;
 		bottom: 0;
 		background-color: rgba(0, 51, 26, 0.75);
-		
+
 	}
 
 	.text-footer {
@@ -508,7 +519,7 @@ p {
 		font-size: 0.8em;
 		margin-top: 2%;
 	}
-	
+
 	.form-text {
 		font-size: 0.8em;
 	}
@@ -531,7 +542,7 @@ p {
 		font-size: 0.975em;
 		margin-top: 1%;
 	}
-	
+
 	.form-text {
 		font-size: 1em;
 	}
